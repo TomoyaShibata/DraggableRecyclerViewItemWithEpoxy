@@ -23,7 +23,7 @@ class MainRecyclerViewEpoxyController : EpoxyController() {
         item(it)
         onTouchItemDragHandle { _, event ->
           if (event.actionMasked == MotionEvent.ACTION_DOWN) {
-            this@MainRecyclerViewEpoxyController.clickDragHandleEvent.value = (it.id)
+            this@MainRecyclerViewEpoxyController.clickDragHandleEvent.value = it.id
           }
           return@onTouchItemDragHandle true
         }
