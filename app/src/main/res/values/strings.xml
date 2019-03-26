@@ -1,0 +1,4 @@
+<resources>
+  <string name="app_name">DraggableRecyclerViewItemWithEpoxy</string>
+  <string name="recycler_item_drag_handle_image_content_description">Drag handle</string>
+</resources>

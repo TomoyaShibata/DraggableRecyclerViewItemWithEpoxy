@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools">
+
+  <data>
+
+    <variable
+      name="item"
+      type="com.tomoyashibata.draggablerecyclerviewItemwithepoxy.data.Item" />
+
+    <variable
+      name="onTouchItemDragHandle"
+      type="android.view.View.OnTouchListener" />
+  </data>
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="52dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground">
+
+    <TextView
+      android:id="@+id/recycler_item_name_text"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="8dp"
+      android:layout_marginTop="8dp"
+      android:layout_marginEnd="8dp"
+      android:layout_marginBottom="8dp"
+      android:text="@{item.name}"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toStartOf="@+id/recycler_item_drag_handle_image"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      tools:text="Item" />
+
+    <ImageView
+      android:id="@+id/recycler_item_drag_handle_image"
+      android:layout_width="wrap_content"
+      android:layout_height="0dp"
+      android:layout_marginEnd="8dp"
+      android:contentDescription="@string/recycler_item_drag_handle_image_content_description"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:setOnTouchListener="@{onTouchItemDragHandle}"
+      app:srcCompat="@drawable/ic_drag_handle" />
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
